@@ -1,0 +1,91 @@
+html {
+  /* border: 1px solid blue; */
+}
+body {
+  color: red;
+  /* border: 1px solid black; */
+}
+
+.container {
+       display: grid;
+       width: 90vw;
+       margin:auto;
+       grid-template-columns: 1fr;
+       grid-template-rows: repeat(3, auto);
+       grid-template-areas:
+       "top top"
+       "img img"
+       "content content"
+       "bottom bottom";
+       border: 1px solid red;
+   }
+
+.box {
+  display: flex;
+  color: black;
+  /* padding: 30px; */
+  border: 1px solid blue;
+  margin: 10px;
+  /* width: 100px;
+  height: 80px; */
+
+  /* align-items: center;
+  justify-content: center; */
+}
+
+/* Header: flex container with two items */
+.header{
+  grid-area: top;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-title{
+  border: 1px solid yellow;
+}
+
+.header-nav{
+  display: flex;
+  border: 1px solid yellow;
+}
+
+.menu{
+  border: 1px solid red;
+  padding: 8px;
+  margin: 5px;
+}
+
+.image{
+  grid-area: img;
+  height: 200px;
+  background-image: url(../images/wall.JPG);
+  background-size: cover;
+}
+
+/* Content: flex container */
+.content{
+  grid-area: content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.blog-post{
+  border: 1px solid gray;
+  background-color: WhiteSmoke;
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+}
+
+
+
+.footer{
+  grid-area: bottom;
+  height: 50px;
+}
+
+
+
+/* * {
+  border: 1px solid red !important;
+} */
