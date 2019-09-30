@@ -17,15 +17,16 @@ body {
        "img img"
        "content content"
        "bottom bottom";
-       border: 1px solid red;
+       /* border: 1px solid red; */
+       /* background-color: WhiteSmoke; */
    }
 
 .box {
   display: flex;
   color: black;
   /* padding: 30px; */
-  border: 1px solid blue;
-  margin: 10px;
+  /* border: 1px solid blue; */
+  /* margin: 10px; */
   /* width: 100px;
   height: 80px; */
 
@@ -41,47 +42,61 @@ body {
 }
 
 .header-title{
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 
 .header-nav{
   display: flex;
-  border: 1px solid yellow;
+
 }
 
 .menu{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 8px;
   margin: 5px;
 }
 
 .image{
   grid-area: img;
-  height: 200px;
+  height: 300px;
   background-image: url(../images/wall.JPG);
   background-size: cover;
 }
 
 /* Content: flex container */
 .content{
+  border: 1px solid red;
+  padding: 20px;
   grid-area: content;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-}
-.blog-post{
-  border: 1px solid gray;
-  background-color: WhiteSmoke;
-  width: 300px;
-  padding: 20px;
-  margin: 10px;
-}
 
+}
+.card{
+  background-color: white;
+  width: 300px;
+  height: 150px;
+  padding: 10px;
+  margin: 10px;
+
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* border-radius: 5px; /* 5px rounded corners */ */
+
+
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 20px 0 rgba(0,0,0,0.2);
+}
 
 
 .footer{
+  color: white;
   grid-area: bottom;
-  height: 50px;
+  height: 100px;
+  background-color: WhiteSmoke;
 }
 
 
