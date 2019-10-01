@@ -10,7 +10,6 @@
 }
 
 ul#navigation-bar li {
-  /* border: 1px solid yellow; */
   color: red;
   list-style-type: none;
   margin: 0;
@@ -30,16 +29,15 @@ ul#navigation-bar li a:hover {
   color: #9B9999;
 }
 
+/* General button style */
 button {
   background-color: #333;
   border: none;
-  /* color: white; */
   padding: 15px 32px;
-  /* text-align: right; */
-  /* text-decoration: none; */
   font-size: 16px;
 }
 
+/* Media queries */
 /* Small screens */
 @media (max-width:450px) {
   .header {

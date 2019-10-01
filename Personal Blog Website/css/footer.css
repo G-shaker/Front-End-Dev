@@ -1,6 +1,5 @@
 footer {
   grid-area: bottom;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
 }
@@ -11,8 +10,6 @@ footer {
   background-color: #404040;
   text-align: center;
   line-height: 220px;
-  /* grid-area: bottom; */
-  /* border: 1px solid red; */
 }
 
 h4 {
@@ -29,6 +26,5 @@ h4 {
   text-align: center;
   line-height: 50px;
   font-size: 11px;
-  /* postion: absolute; */
   /* border: 1px solid red; */
 }

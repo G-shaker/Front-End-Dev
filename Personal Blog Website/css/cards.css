@@ -1,7 +1,6 @@
 /* Author card for individual blog posts */
 .author-card {
   background-color: white;
-  /* width: 220px; */
   height: 500px;
   padding: 10px;
   margin: 10px;
@@ -9,12 +8,12 @@
   display: flex;
   flex-direction: column;
 }
+
 .author-img {
   height: 200px;
   background-image: url(../images/avatar.png);
   background-size: cover;
 }
-
 
 /* Intro card in homepage */
 .intro-card {
@@ -24,6 +23,7 @@
   font-size: 15px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
+
 h2 {
   margin: 0;
   padding: 0;
@@ -42,6 +42,7 @@ blog-card is a flexbox with 3 items */
   margin: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
 /* On mouse-over, add a deeper shadow */
 .blog-card:hover {
   box-shadow: 0 8px 20px 0 rgba(0,0,0,0.2);
@@ -55,14 +56,17 @@ blog-card is a flexbox with 3 items */
 .blog-card-cap {
   margin: 10px;
 }
+
 .blog-card-cap a {
   text-decoration: none;
   float: right;
 }
+
 .blog-title {
   font-size: 20px;
   font-weight: bold;
 }
+
 time {
   font-size: 14px;
   color: #8c8c8c;
@@ -79,6 +83,27 @@ time {
 
 }
 
-/* * {
-  border: 1px solid red !important;
-} */
+/* Media queries */
+
+/* Small screens */
+@media (max-width:450px) {
+  .blog-card {
+    width: 300px;
+    height: 330px;
+  }
+  .blog-card img {
+    width: 300px;
+    height: 200px;
+  }
+}
+/* Medium screens */
+@media (min-width:450px) and (max-width:800px) {
+  .blog-card {
+    width: 320px;
+    height: 350px;
+  }
+  .blog-card img {
+    width: 320px;
+    height: 220px;
+  }
+}

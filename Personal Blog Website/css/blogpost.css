@@ -23,7 +23,6 @@ body {
   "img img"
   "center right"
   "bottom bottom";
-  border: 1px solid yellow;
 }
 
 /* Image section */
@@ -40,9 +39,7 @@ body {
   grid-area: center;
   display: flex;
   flex-direction: column;
-  /* margin: 10px; */
-  /* padding: 10px; */
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .post {
@@ -96,10 +93,6 @@ figcaption {
 }
 
 .share h4 {
-  /* margin: 0;
-  padding: 0;
-  font-weight: lighter;
-  font-size: 18px; */
   padding-bottom: 15px;
 }
 
@@ -108,7 +101,6 @@ figcaption {
   height: 50px;
   object-fit: cover;
   margin-bottom: 50px;
-
 }
 
 .home-button a {
@@ -120,17 +112,16 @@ figcaption {
   width: 250px;
 }
 
-/* Sidebar section: includes author info and sidebar */
+/* Sidebar section: includes author info and archives */
 .sidebar {
   grid-area: right;
   background-color: #e6e6e6;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
 }
 
 .archives {
-  grid-area: other;
-  display: flex;
-  flex-direction: column;
   margin: 10px;
   padding: 10px;
 }
@@ -142,7 +133,7 @@ figcaption {
     display: grid;
     width: 100vw;
     margin:auto;
-    grid-template-columns: 3fr;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(5, autofit);
     grid-template-areas:
     "top"
@@ -150,7 +141,6 @@ figcaption {
     "center"
     "right"
     "bottom";
-    border: 5px solid red;
   }
   article img {
     width: 250px;
@@ -164,7 +154,7 @@ figcaption {
     display: grid;
     width: 100vw;
     margin:auto;
-    grid-template-columns: 3fr;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(5, autofit);
     grid-template-areas:
     "top"
@@ -172,11 +162,14 @@ figcaption {
     "center"
     "right"
     "bottom";
-    border: 5px solid blue;
   }
   article img {
     width: 400px;
     height: 250px;
     object-fit: cover;
+  }
+
+  .sidebar {
+    flex-direction: row;
   }
 }
