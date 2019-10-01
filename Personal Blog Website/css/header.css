@@ -1,11 +1,11 @@
 /* Header: flex container. includes navigation bar */
-.header{
+.header {
   grid-area: top;
   display: flex;
   justify-content: space-around;
 }
 
-.header-title{
+.header-title {
   /* border: 1px solid yellow; */
 }
 
@@ -28,4 +28,15 @@ ul#navigation-bar li a {
 
 ul#navigation-bar li a:hover {
   color: #9B9999;
+}
+
+button {
+  background-color: #333;
+  border: none;
+  /* color: white; */
+  padding: 15px 32px;
+  /* text-align: right; */
+  /* text-decoration: none; */
+
+  font-size: 16px;
 }

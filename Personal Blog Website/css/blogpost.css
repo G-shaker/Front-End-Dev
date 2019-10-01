@@ -26,7 +26,7 @@ body {
 }
 
 /* Image section */
-.image{
+.image {
   grid-area: img;
   height: 400px;
   background-image: url(../images/louvre.JPG);
@@ -34,7 +34,7 @@ body {
 }
 
 /* Content section: includes "post" and "share" classes */
-.content{
+.content {
   background-color: #e6e6e6;
   grid-area: center;
   display: flex;
@@ -43,37 +43,93 @@ body {
   /* padding: 10px; */
   border: 1px solid blue;
 }
-.post{
+
+.post {
   background-color: white;
   margin: 10px;
-  padding: 20px;
+  padding: 20px 30px 60px 30px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
-.share{
+
+.post h1 {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.post h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #8c8c8c;
+  font-weight: lighter;
+}
+
+.post p {
+  text-indent: 50px;
+  line-height: 25px;
+}
+
+article img {
+  width: 450px;
+  height: 300px;
+  object-fit: cover;
+}
+
+figcaption {
+  color: gray;
+  font-size: 10px;
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  margin: 10px;
+  margin: 0 10px 10px 10px;
   padding: 20px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
-  height: 100px;
+  height: 200px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.share h4 {
+  /* margin: 0;
+  padding: 0;
+  font-weight: lighter;
+  font-size: 18px; */
+  padding-bottom: 15px;
+}
+
+.share img {
+  width: 130px;
+  height: 50px;
+  object-fit: cover;
+  margin-bottom: 50px;
+
+}
+
+.home-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.home-button {
+  width: 250px;
 }
 
 /* Sidebar section: includes author info and sidebar */
-.sidebar{
+.sidebar {
   grid-area: right;
   background-color: #e6e6e6;
   border: 1px solid red;
-
 }
-.archives{
+
+.archives {
   grid-area: other;
   display: flex;
   flex-direction: column;
   margin: 10px;
   padding: 10px;
 }
-
-
-
-/* * {
-border: 1px solid red !important;
-} */

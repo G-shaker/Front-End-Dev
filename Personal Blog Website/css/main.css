@@ -23,7 +23,7 @@ body {
        /* border: 1px solid red; */
 }
 
-.image{
+.image {
   grid-area: img;
   height: 400px;
   background-image: url(../images/wall.JPG);
@@ -31,7 +31,7 @@ body {
 }
 
 /* Content class: Nested grid with two children*/
-.content{
+.content {
   display: grid;
   width: 100vw;
   grid-template-columns: 1fr;
@@ -43,13 +43,13 @@ body {
 }
 
 /* Children of content class */
-.intro{
+.intro {
   grid-area:intro;
   height: 150px;
   background-color: #e6e6e6;
   /* border: 1px solid red; */
 }
-.blogs{
+.blogs {
   /* padding: 10px; */
   grid-area: blogs;
   display: flex;

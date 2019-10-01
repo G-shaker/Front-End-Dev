@@ -1,5 +1,5 @@
 /* Author card for individual blog posts */
-.author-card{
+.author-card {
   background-color: white;
   /* width: 220px; */
   height: 500px;
@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
 }
-.author-img{
+.author-img {
   height: 200px;
   background-image: url(../images/avatar.png);
   background-size: cover;
@@ -17,27 +17,28 @@
 
 
 /* Intro card in homepage */
-.intro-card{
+.intro-card {
   background-color: white;
   margin: 10px;
   text-align: center;
   font-size: 15px;
-  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
-h2{
+h2 {
   margin: 0;
   padding: 0;
   line-height: 100px;
   /* font-weight: 100; */
 }
 
-/* Blog post cards in homepage */
-.blog-card{
+/* Blog post cards in homepage
+blog-card is a flexbox with 3 items */
+.blog-card {
   display: flex;
   flex-direction: column;
   background-color: white;
   width: 450px;
-  height: 400px;
+  height: 430px;
   margin: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
@@ -45,25 +46,37 @@ h2{
 .blog-card:hover {
   box-shadow: 0 8px 20px 0 rgba(0,0,0,0.2);
 }
-img {
+.blog-card img {
   width: 450px;
   height: 300px;
   object-fit: cover;
 }
-.blog-card-cap{
+
+.blog-card-cap {
   margin: 10px;
 }
-.blog-card-cap a{
+.blog-card-cap a {
   text-decoration: none;
   float: right;
 }
-.blog-title{
+.blog-title {
   font-size: 20px;
   font-weight: bold;
 }
-time{
+time {
   font-size: 14px;
   color: #8c8c8c;
+}
+.read-button a {
+  color: white;
+}
+.read-button {
+  font-size: 15px;
+  padding: 10px 18px;
+}
+.read-button:hover {
+  background-color: #888;
+
 }
 
 /* * {
