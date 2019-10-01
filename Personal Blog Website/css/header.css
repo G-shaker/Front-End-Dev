@@ -1,0 +1,31 @@
+/* Header: flex container. includes navigation bar */
+.header{
+  grid-area: top;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-title{
+  /* border: 1px solid yellow; */
+}
+
+ul#navigation-bar li {
+  /* border: 1px solid yellow; */
+  color: red;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+}
+ul#navigation-bar li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 20px;
+  width: 50px;
+}
+
+ul#navigation-bar li a:hover {
+  color: #9B9999;
+}

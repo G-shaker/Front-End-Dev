@@ -1,0 +1,33 @@
+footer{
+  grid-area: bottom;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+
+}
+.subscribe{
+  color: white;
+  height: 220px;
+  background-color: #404040;
+  text-align: center;
+  line-height: 220px;
+  /* grid-area: bottom; */
+  /* border: 1px solid red; */
+}
+h4{
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+.footer{
+  color: white;
+  height: 50px;
+  background-color: #333333;
+  text-align: center;
+  line-height: 50px;
+  font-size: 11px;
+  /* postion: absolute; */
+  /* border: 1px solid red; */
+}

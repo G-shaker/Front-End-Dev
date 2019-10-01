@@ -4,49 +4,99 @@
         <meta charset="utf-8" />
         <title>Page Title</title>
         <link rel="stylesheet" href="../css/main.css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     </head>
     <body>
-<!-- Begin container -->
-      <div class= "container">
+      <!-- Begin container -->
+      <div class= "home-container">
 
-<!-- Container item: Header  -->
-        <div class="box header">
+        <!-- Container item: Header  -->
+        <div class="header">
           <div class="header-title">
-            <h1> Walls and Sketches </h1>
+            <h1> Art & Travel </h1>
           </div>
-          <div class= "header-nav">
-            <div class= "menu"> <h4> Home </h4> </div>
-            <div class= "menu"> <h4> Blogs </h4> </div>
-            <div class= "menu"> <h4> Gallery </h4> </div>
-            <div class= "menu"> <h4> About </h4> </div>
-          </div>
+          <ul id="navigation-bar">
+            <li> <a href="#home">Home</a> </li>
+            <li> <a href="#blogs">Blogs</a> </li>
+            <li> <a href="#gallery">Gallery</a> </li>
+            <li> <a href="#about"> About </a> </li>
+          </ul>
         </div>
 
 
 <!-- Container item: Home page image  -->
-        <div class="box image">  </div>
+        <div class="image"> </div>
 
 <!-- Container item: Blog posts  -->
-        <div class="box content"> 
-          <div class=card>
-            <h3>Blog post: Sketching with charcoal</h3>
-            <a href="blogpost.html">Read more </a>
+        <div class="content">
+          <div class="intro">
+            <div class="intro-card"> <h2> Most recent blog posts</h2></div>
           </div>
-          <div class=card>
-            <h3>Blog post: Stencils</h3>
-          </div>
-          <div class=card>
-            <h3>Blog post: Experimenting with lines</h3>
-          </div>
-          <div class=card>
-            <h3>Blog post: Framing</h3>
-          </div>
+          <div class="blogs">
+            <div class="blog-card">
+              <img src="../images/louvre.JPG" alt="" class="blog-img">
+              <div class="blog-card-cap">
+                <div class=blog-title> Yanbu beach doodles </div>
+                <time> September 5, 2019 </time> </br> </br>
+                <a href="blogpost.html"> Read >>  </a>
+              </div>
+            </div>
 
-<!-- Container item: Footer  -->
+            <div class="blog-card">
+              <img src="../images/painting.JPG" alt="" class="blog-img">
+              <div class="blog-card-cap">
+                <div class=blog-title> Experimenting with lines </div>
+                <time> September 5, 2019 </time> </br> </br>
+                <a href="blogpost.html"> Read >>  </a>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <img src="../images/elseed.JPG" alt="" class="blog-img">
+              <div class="blog-card-cap">
+                <div class=blog-title> Yanbu beach doodles </div>
+                <time> September 5, 2019 </time> </br> </br>
+                <a href="blogpost.html"> Read >>  </a>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <img src="../images/wall2.JPG" alt="" class="blog-img">
+              <div class="blog-card-cap">
+                <div class=blog-title> Yanbu beach doodles </div>
+                <time> September 5, 2019 </time> </br> </br>
+                <a href="blogpost.html"> Read >>  </a>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <img src="../images/obour.JPG" alt="" class="blog-img">
+              <div class="blog-card-cap">
+                <div class=blog-title> Yanbu beach doodles </div>
+                <time> September 5, 2019 </time> </br> </br>
+                <a href="blogpost.html"> Read >>  </a>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <img src="../images/dubai.JPG" alt="" class="blog-img">
+              <div class="blog-card-cap">
+                <div class=blog-title> Yanbu beach doodles </div>
+                <time> September 5, 2019 </time> </br> </br>
+                <a href="blogpost.html"> Read >>  </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="box footer"> Footer </div>
-
+<!-- Container item: Footer  -->
+        <footer> 
+          <div class="subscribe">
+            <h4> Receive the latest blog posts, subscribe! </h4>
+          <!-- <button type="button" name="button"></button> -->
+          </div>
+          <div class="footer">Copyright © 2019 Ghofran Shaker. All Rights Reserved.</div>
+        </footer>
 
 <!-- End of container  -->
       </div>

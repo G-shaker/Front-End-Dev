@@ -1,0 +1,79 @@
+@import "header.css";
+@import "footer.css";
+@import "cards.css";
+
+html,
+body {
+  color: black;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat",sans-serif, Helvetica, Arial;
+}
+
+/* Main container has 5 main sections: header,image,content,sidebar,footer */
+.container {
+  display: grid;
+  width: 100vw;
+  margin:auto;
+  grid-template-columns: 3fr 300px;
+  grid-template-rows: repeat(4, autofit);
+  grid-template-areas:
+  "top top"
+  "img img"
+  "center right"
+  "bottom bottom";
+  border: 1px solid yellow;
+}
+
+/* Image section */
+.image{
+  grid-area: img;
+  height: 400px;
+  background-image: url(../images/louvre.JPG);
+  background-size: cover;
+}
+
+/* Content section: includes "post" and "share" classes */
+.content{
+  background-color: #e6e6e6;
+  grid-area: center;
+  display: flex;
+  flex-direction: column;
+  /* margin: 10px; */
+  /* padding: 10px; */
+  border: 1px solid blue;
+}
+.post{
+  background-color: white;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+}
+.share{
+  background-color: white;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+  height: 100px;
+}
+
+/* Sidebar section: includes author info and sidebar */
+.sidebar{
+  grid-area: right;
+  background-color: #e6e6e6;
+  border: 1px solid red;
+
+}
+.archives{
+  grid-area: other;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+}
+
+
+
+/* * {
+border: 1px solid red !important;
+} */

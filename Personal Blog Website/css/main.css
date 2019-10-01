@@ -1,103 +1,68 @@
-html {
-  /* border: 1px solid blue; */
-}
+@import "header.css";
+@import "footer.css";
+@import "cards.css";
+
+html,
 body {
-  color: red;
-  /* border: 1px solid black; */
-}
-
-.container {
-       display: grid;
-       width: 90vw;
-       margin:auto;
-       grid-template-columns: 1fr;
-       grid-template-rows: repeat(3, auto);
-       grid-template-areas:
-       "top top"
-       "img img"
-       "content content"
-       "bottom bottom";
-       /* border: 1px solid red; */
-       /* background-color: WhiteSmoke; */
-   }
-
-.box {
-  display: flex;
   color: black;
-  /* padding: 30px; */
-  /* border: 1px solid blue; */
-  /* margin: 10px; */
-  /* width: 100px;
-  height: 80px; */
-
-  /* align-items: center;
-  justify-content: center; */
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat",sans-serif, Helvetica, Arial;
 }
 
-/* Header: flex container with two items */
-.header{
-  grid-area: top;
-  display: flex;
-  justify-content: space-around;
-}
-
-.header-title{
-  /* border: 1px solid yellow; */
-}
-
-.header-nav{
-  display: flex;
-
-}
-
-.menu{
-  /* border: 1px solid red; */
-  padding: 8px;
-  margin: 5px;
+.home-container {
+       display: grid;
+       width: 100vw;
+       grid-template-columns: 1fr;
+       grid-template-rows: repeat(4, autofit);
+       grid-template-areas:
+       "top"
+       "img"
+       "content"
+       "bottom";
+       /* border: 1px solid red; */
 }
 
 .image{
   grid-area: img;
-  height: 300px;
+  height: 400px;
   background-image: url(../images/wall.JPG);
   background-size: cover;
 }
 
-/* Content: flex container */
+/* Content class: Nested grid with two children*/
 .content{
-  border: 1px solid red;
-  padding: 20px;
-  grid-area: content;
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, autofit);
+  grid-template-areas:
+  "intro"
+  "blogs";
+  /* border: 1px solid red; */
+}
+
+/* Children of content class */
+.intro{
+  grid-area:intro;
+  height: 150px;
+  background-color: #e6e6e6;
+  /* border: 1px solid red; */
+}
+.blogs{
+  /* padding: 10px; */
+  grid-area: blogs;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background-color: #e6e6e6;
+  padding-bottom: 100px;
 
 }
-.card{
-  background-color: white;
-  width: 300px;
-  height: 150px;
-  padding: 10px;
-  margin: 10px;
-
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  /* border-radius: 5px; /* 5px rounded corners */ */
 
 
-}
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 20px 0 rgba(0,0,0,0.2);
-}
 
 
-.footer{
-  color: white;
-  grid-area: bottom;
-  height: 100px;
-  background-color: WhiteSmoke;
-}
 
 
 
