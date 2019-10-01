@@ -11,6 +11,7 @@ body {
 }
 
 /* Main container has 5 main sections: header,image,content,sidebar,footer */
+/* Large sized screen */
 .container {
   display: grid;
   width: 100vw;
@@ -132,4 +133,50 @@ figcaption {
   flex-direction: column;
   margin: 10px;
   padding: 10px;
+}
+
+
+/* Small screens */
+@media (max-width:450px) {
+  .container {
+    display: grid;
+    width: 100vw;
+    margin:auto;
+    grid-template-columns: 3fr;
+    grid-template-rows: repeat(5, autofit);
+    grid-template-areas:
+    "top"
+    "img"
+    "center"
+    "right"
+    "bottom";
+    border: 5px solid red;
+  }
+  article img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+  }
+}
+/* Medium screens */
+@media (min-width:450px) and (max-width:800px) {
+  .container {
+    display: grid;
+    width: 100vw;
+    margin:auto;
+    grid-template-columns: 3fr;
+    grid-template-rows: repeat(5, autofit);
+    grid-template-areas:
+    "top"
+    "img"
+    "center"
+    "right"
+    "bottom";
+    border: 5px solid blue;
+  }
+  article img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+  }
 }
