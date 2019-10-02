@@ -142,10 +142,9 @@ figcaption {
     "right"
     "bottom";
   }
-  article img {
-    width: 250px;
-    height: 150px;
-    object-fit: cover;
+
+  .image {
+    height: 250px;
   }
 }
 /* Medium screens */
@@ -162,11 +161,6 @@ figcaption {
     "center"
     "right"
     "bottom";
-  }
-  article img {
-    width: 400px;
-    height: 250px;
-    object-fit: cover;
   }
 
   .sidebar {
