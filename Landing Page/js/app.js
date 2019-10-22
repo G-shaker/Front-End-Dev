@@ -21,6 +21,7 @@ const allSections = document.querySelectorAll('section');
 const navList = document.querySelector('#navbar__list');
 const topButton = document.querySelector('#btn');
 const navBar = document.querySelector(".page__header");
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -31,11 +32,11 @@ const navBar = document.querySelector(".page__header");
 function isInViewport(element){
   const bounding = element.getBoundingClientRect();
   return (
-        bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+    bounding.top >= 0 &&
+    bounding.left >= 0 &&
+    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
 }
 
 //Helper function: scrolls to top when button is clicked
@@ -46,7 +47,6 @@ function scrollToTop(){
     left: 0,
     behavior: 'smooth'
   });
-
 }
 
 //Helper function: shows "back to top" button when user scrolls to bottom
@@ -64,17 +64,15 @@ function scrollFunction() {
 //Hide navigation bar while not scrolling
 function hideNavMenu(){
   const ph = document.querySelector(".page__header");
-  var isScrolling;
+  let isScrolling;
   window.clearTimeout(isScrolling);
 
   isScrolling = setTimeout(function(){
     console.log("stoppeds scrolling.");
     ph.style.display = "none";
   }, 5000);
-
-    ph.style.display = "block";
+  ph.style.display = "block";
 }
-
 
 /**
  * End Helper Functions
@@ -84,44 +82,41 @@ function hideNavMenu(){
 
 // build the navigation bar
 function buildNav(){
+  allSections.forEach(section => {
+    //create new list item element with class menu__link
+    const newLi = document.createElement("li");
+    newLi.className = "menu__link";
 
-  for(let i = 0; i < allSections.length; i++){
+    //create new anchor and set its href and text content
+    const newAn = document.createElement("a");
 
-      //create new list item element with class menu__link
-      const newLi = document.createElement("li");
-      newLi.className = "menu__link";
+    const string = "#" + section.getAttribute("id");
+    newAn.setAttribute("href", string);
+    newAn.textContent = section.getAttribute("data-nav");
 
-      //create new anchor and set its href and text content
-      const newAn = document.createElement("a");
-
-      const string = "#" + allSections[i].getAttribute("id");
-      newAn.setAttribute("href", string);
-      newAn.textContent = allSections[i].getAttribute("data-nav");
-
-      //append new anchor to new list item then new list item to navigation list
-      newLi.appendChild(newAn);
-      navList.appendChild(newLi);
-  }
-
+    //append new anchor to new list item then new list item to navigation list
+    newLi.appendChild(newAn);
+    navList.appendChild(newLi);
+  });
 }
 
 // Add active state to section that is in viewport, and additionally add active state to corresponding item on navigation menu
 function addActive(){
-  for(let i = 0; i < allSections.length; i++){
+  allSections.forEach(section => {
     //active state to navigation items, create string to select the corresponding item on navigation menu
-    let s1 = '#' + allSections[i].getAttribute("id");
+    let s1 = '#' + section.getAttribute("id");
     let s2 = "a[href='"+ s1 +"']";
     let navItem = document.querySelector(s2);
 
-    if(isInViewport(allSections[i])){
-      allSections[i].classList.add('your-active-class');
+    if(isInViewport(section)){
+      section.classList.add('your-active-class');
       navItem.parentElement.classList.add('active');
     }
     else{
-      allSections[i].classList.remove('your-active-class');
+      section.classList.remove('your-active-class');
       navItem.parentElement.classList.remove('active');
     }
-  }
+  });
 }
 
 // Scroll to anchor ID using scrollTO event (parameter is the clicked event target)
@@ -150,7 +145,7 @@ navList.addEventListener('click', function (evt) {
 // Set sections as active, and hide navigation bar when not scrolling
 window.addEventListener('scroll', ()=>{
   addActive();
-  hideNavMenu();
+  // hideNavMenu();
 });
 
 //Show "back to top" button
