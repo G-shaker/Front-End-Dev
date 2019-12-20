@@ -9,8 +9,13 @@ module.exports = {
     devtool: 'source-map',
     stats: 'verbose',
     output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'bundle.js',
       libraryTarget: 'var',
       library: 'Client'
+    },
+    devServer: {
+      contentBase: path.join(__dirname, 'dist')
     },
     module: {
         rules: [
