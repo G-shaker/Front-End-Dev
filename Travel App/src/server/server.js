@@ -13,18 +13,17 @@ app.use(bodyParser.json());
 // Cors for cross origin allowance
 const cors = require('cors');
 app.use(cors());
-
 app.use(express.static('dist'))
 
+//home route uses index file from dist
+app.get('/', function (req, res) {
+    res.sendFile('dist/index.html')
+})
 
 // Setup Server
-const port = 3000;
-const server = app.listen(port, listening);
-
-function listening(){
-    console.log('server running');
-    console.log(`running on localhost: ${port}`);
-};
+app.listen(3000, function () {
+    console.log('Running on localhost:3000!')
+})
 
 // GET route that returns projectData
 app.get('/all', (request, response)=> {
