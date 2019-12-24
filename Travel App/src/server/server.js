@@ -22,8 +22,8 @@ app.get('/', function (req, res) {
 })
 
 // Setup Server
-app.listen(3030, function () {
-    console.log('Running on localhost:3030!')
+app.listen(3000, function () {
+    console.log('Running on localhost:3000!')
 })
 
 // GET route that returns projectData
@@ -31,14 +31,19 @@ app.get('/all', (request, response)=> {
   response.send(projectData);
 });
 
+// GET route that returns weatherData
+app.get('/weather', (request, response)=> {
+  response.send(weatherData);
+});
+
 // POST route
 app.post('/add', (req, res)=> {
   console.log(req.body)
   const d = req.body;
-  projectData['lat'] = d.lat;
-  projectData['long'] = d.long;
+  projectData['city'] = d.city;
   projectData['countryCode'] = d.countryCode;
   projectData['countdown'] = d.countdown;
+  projectData['tripLen'] = d.tripLen;
 
   console.log('projectData: ', projectData);
 });

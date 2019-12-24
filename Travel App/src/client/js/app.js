@@ -17,20 +17,20 @@ function performAction(e){
   getData(baseURL, zip, apiKey)
   .then(result=>{
     console.log(result);
-    const input = document.getElementById('feelings').value;
-    const travelD = document.getElementById('travelDate').value.split("-");
+    const startDate = document.getElementById('startDate').value.split("-");
+    const endDate = document.getElementById('endDate').value.split("-");
 
-    const year= travelD[0];
-    const month = travelD[1];
-    const day = travelD[2];
+    const year= startDate[0];
+    const month = startDate[1];
+    const day = startDate[2];
     const time = year+ "-"+ month+ "-"+ day+ "T12:00:00";
-    const countdown = getCountdown(new Date(year, month-1, day));
-
-    postData('/add', {lat: result.lat, long: result.lng, countryCode: result.countryCode, countdown: countdown});
+    const countdown = getDifference(new Date(year, month-1, day), new Date());
+    const tripLength = getDifference(new Date(endDate[0], endDate[1]-1, endDate[2]), new Date(startDate[0], startDate[1]-1, startDate[2]));
+    console.log(tripLength.toFixed);
+    postData('/add', {city: zip, countryCode: result.countryCode, countdown: countdown, tripLen: tripLength});
 
     const str = result.lat+ ","+ result.lng+ ","+ time;
     console.log(str);
-
     return getD(darkSkyApi, str);
   })
   .then(weatherData=>{
@@ -42,18 +42,16 @@ function performAction(e){
   })
 };
 
-function getCountdown(date){
-  const today = new Date();
-  console.log("date: ", date)
-
-  const time_diff = date.getTime() - today.getTime();
+//function to calculate difference between two dates
+function getDifference(date1, date2){
+  const time_diff = date1.getTime() - date2.getTime();
   const day_diff = time_diff/(1000 * 3600 * 24);
 
   console.log("Days difference: ", day_diff);
   return day_diff;
 }
 
-/* Function to GET Web API Data */
+/* Function to GET geonames API Data */
 const getData = async (baseURL, zip, key)=>{
   const res = await fetch(baseURL+`${zip}`+key)
 
@@ -106,21 +104,31 @@ const updateUI = async(data) => {
   console.log("updating UI")
   console.log(data)
   const imgURL = data.hits[0].largeImageURL;
-  document.getElementById('image').src = imgURL; 
+  document.getElementById('image').src = imgURL;
 
   const request = await fetch('/all');
   try{
    const allData = await request.json();
    console.log(allData);
-   // console.log("updating UI");
-   document.getElementById('lat').innerHTML = "Latitude: " + allData.lat;
-   document.getElementById('long').innerHTML = "Longitude: "+ allData.long;
+   document.getElementById('city').innerHTML = "City: " + allData.city;
    document.getElementById('country').innerHTML = "Country: "+ allData.countryCode;
-   document.getElementById('countdown').innerHTML = "Countdown: "+ allData.countdown + "days";
+   document.getElementById('countdown').innerHTML = "Countdown: "+ allData.countdown + " days";
+   document.getElementById('tripLen').innerHTML = "Trip length: "+ allData.tripLen + " days";
 
  }catch(error){
    console.log("error", error);
  }
+
+ const req = await fetch('/weather');
+ try{
+  const allData = await req.json();
+  console.log(allData);
+  document.getElementById('weather').innerHTML = "Weather summary: " + allData.summary;
+}catch(error){
+  console.log("error", error);
+}
+
+
 };
 
 export{

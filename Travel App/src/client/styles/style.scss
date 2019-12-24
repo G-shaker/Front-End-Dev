@@ -1,5 +1,6 @@
 body{
-    background: #2C2828;
+    // background: #2C2828;
+    background: #30033E;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0px;
 }
@@ -11,7 +12,7 @@ body{
     grid-template-areas:
       "top top"
       "left right";
-    color: white;
+    color: #8BCBE5;
     width: 100vw;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
@@ -29,7 +30,8 @@ body{
   grid-area: top;
   font-size: 40px;
   padding: 20px;
-  color: #f0d43a;
+  // color: #f0d43a;
+  color: #8BCBE5;
 }
 
 .left{
@@ -38,8 +40,10 @@ body{
 .entry{
   grid-area: right;
   border-left: 2px solid #000;
-  border-color: #f0d43a;
-  color: #f0d43a;
+  // border-color: white;
+  background-color: #8BCBE5;
+  // color: #f0d43a;
+  color: #30033E;
 }
 
 #entryHolder{
@@ -47,17 +51,6 @@ body{
   font-weight: 100;
 }
 
-// #date{
-//
-// }
-// 
-// #temp{
-//
-// }
-//
-// #content{
-//
-// }
 
 .title{
   font-size: 27px;
@@ -74,24 +67,25 @@ input{
     display:block;
     height: 40px;
     width: 300px;
-    background:#2C2828;
-    color: white;
+    // background:#2C2828;
+    background:#30033E;
+    color: #8BCBE5;
     font-size: 18px;
     font-family: 'Oswald', sans-serif;
     border: 1px solid #000;
-    border-color: white;
+    border-color: #8BCBE5;
     padding-left: 10px;
 }
 
 button{
     width: 110px;
     height: 40px;
-    background: #2C2828;
-    color: white;
+    background: #30033E;
+    color:#8BCBE5;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: 4px solid #000;
-    border-color: white;
+    border-color: #8BCBE5;
     margin-top: 30px;
 }
 h1{
@@ -109,7 +103,7 @@ textarea{
 }
 
 button:hover{
-  background: white;
+  background: #8BCBE5;
   color: #2C2828;
 }
 
