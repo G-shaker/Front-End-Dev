@@ -1,6 +1,9 @@
 // Personal API Key for OpenWeatherMap API
-const baseURL = "http://api.openweathermap.org/data/2.5/weather?zip=";
-const apiKey = "&appid=ba128eb12cc892a3393c19bc3194a0d9";
+// const baseURL = "http://api.openweathermap.org/data/2.5/weather?zip=";
+// const apiKey = "&appid=ba128eb12cc892a3393c19bc3194a0d9";
+
+const baseURL = "http://api.geonames.org/postalCodeSearchJSON?placename=";
+const apiKey = "&username=gshaker";
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -15,9 +18,10 @@ function performAction(e){
   const zip =  document.getElementById('zip').value;
   getData(baseURL, zip, apiKey)
   .then(result=>{
-    console.log(result);
+    console.log(result.postalCodes[0]);
     const input = document.getElementById('feelings').value;
-    postData('/add', {temp: result.main.temp, date: newDate, resp:input});
+    const ob = result.postalCodes[0];
+    postData('/add', {lat: ob.lat, long: ob.lng, countryCode: ob.countryCode});
   })
   .then(data=>{
     updateUI();
@@ -26,9 +30,15 @@ function performAction(e){
 
 /* Function to GET Web API Data */
 const getData = async (baseURL, zip, key)=>{
-  const res = await fetch(baseURL+`${zip}&units=metric`+key)
+  // const res = await fetch(baseURL+`${zip}&units=metric`+key)
+
+  const res = await fetch(baseURL+`${zip}`+key)
+  console.log("printing data after:")
+
   try {
+    console.log("trying:")
     const data = await res.json();
+    console.log("printing data:")
     console.log(data)
     return data;
   }  catch(error) {
@@ -66,9 +76,9 @@ const updateUI = async() => {
    const allData = await request.json();
    console.log(allData);
    // console.log("updating UI");
-   document.getElementById('temp').innerHTML = "Temperature: " + allData.temp+" °C";
-   document.getElementById('date').innerHTML = "Date: "+ allData.date;
-   document.getElementById('content').innerHTML = "Content: "+ allData.resp;
+   document.getElementById('lat').innerHTML = "Latitude: " + allData.lat;
+   document.getElementById('long').innerHTML = "Longitude: "+ allData.long;
+   document.getElementById('country').innerHTML = "Country: "+ allData.countryCode;
 
  }catch(error){
    console.log("error", error);

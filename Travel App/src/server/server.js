@@ -34,9 +34,9 @@ app.get('/all', (request, response)=> {
 app.post('/add', (req, res)=> {
   console.log(req.body)
   const d = req.body;
-  projectData['temp'] = d.temp;
-  projectData['date'] = d.date;
-  projectData['resp'] = d.resp;
+  projectData['lat'] = d.lat;
+  projectData['long'] = d.long;
+  projectData['countryCode'] = d.countryCode;
 
   console.log('projectData: ', projectData);
 });
