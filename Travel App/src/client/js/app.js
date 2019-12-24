@@ -1,7 +1,7 @@
 const baseURL = "http://api.geonames.org/postalCodeSearchJSON?placename=";
 const apiKey = "&username=gshaker";
-
 const darkSkyApi = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/75ecb47286612ef81f169a2f8e9eac7e/";
+const pixabayAPI = "https://pixabay.com/api/?key=14729819-3098afc5c960270fec699fa97&image_type=photo&q=";
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -27,11 +27,15 @@ function performAction(e){
     const countdown = getCountdown(new Date(year, month-1, day));
 
     postData('/add', {lat: result.lat, long: result.lng, countryCode: result.countryCode, countdown: countdown});
-    return getWeather(darkSkyApi, result.lat, result.lng, time)
+
+    const str = result.lat+ ","+ result.lng+ ","+ time;
+    console.log(str);
+
+    return getD(darkSkyApi, str);
   })
   .then(weatherData=>{
     postData('/weather', {summary: weatherData.daily.data[0].summary});
-    return "weather";
+    return getD(pixabayAPI, zip);
   })
   .then(data=>{
     updateUI(data);
@@ -51,8 +55,6 @@ function getCountdown(date){
 
 /* Function to GET Web API Data */
 const getData = async (baseURL, zip, key)=>{
-  // const res = await fetch(baseURL+`${zip}&units=metric`+key)
-
   const res = await fetch(baseURL+`${zip}`+key)
 
   try {
@@ -63,14 +65,12 @@ const getData = async (baseURL, zip, key)=>{
   }
 };
 
-/* Function to GET DarkSky API Data */
-const getWeather = async (baseURL, long, lat, time)=>{
-  console.log("getting weather")
-  const res = await fetch(baseURL+ long+ ","+ lat+ ","+ time)
-
+/* Function to GET API Data */
+const getD = async (baseURL, str)=>{
+  console.log("getting api Data")
+  const res = await fetch(baseURL+`${str}`)
   try {
     const data = await res.json();
-    console.log("weather data:")
     console.log(data)
     return data;
   }  catch(error) {
@@ -105,6 +105,8 @@ const postData = async ( url = '', data = {})=>{
 const updateUI = async(data) => {
   console.log("updating UI")
   console.log(data)
+  const imgURL = data.hits[0].largeImageURL;
+  document.getElementById('image').src = imgURL; 
 
   const request = await fetch('/all');
   try{

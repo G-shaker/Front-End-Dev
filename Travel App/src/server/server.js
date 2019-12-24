@@ -22,8 +22,8 @@ app.get('/', function (req, res) {
 })
 
 // Setup Server
-app.listen(3000, function () {
-    console.log('Running on localhost:3000!')
+app.listen(3030, function () {
+    console.log('Running on localhost:3030!')
 })
 
 // GET route that returns projectData
